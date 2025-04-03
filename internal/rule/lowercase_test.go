@@ -12,6 +12,9 @@ func TestLowercase(t *testing.T) {
 		{value: "abC", expected: false, err: nil},
 		{value: "abc", expected: true, err: nil},
 		{value: "abc-1", expected: true, err: nil},
+
+		// edge cases currently supported: Diacritical Marks
+		{value: "ðíáçriþîçàl", expected: true, err: nil},
 	}
 
 	i := 0

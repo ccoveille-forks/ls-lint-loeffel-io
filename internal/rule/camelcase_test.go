@@ -22,6 +22,10 @@ func TestCamelCase(t *testing.T) {
 		{value: "CAMELCASE", expected: false, err: nil},
 		{value: "camel_case", expected: false, err: nil},
 		{value: "camel.case", expected: false, err: nil},
+
+		// edge cases currently supported: Diacritical Marks
+		{value: "ðíáçriþîçàlCamelCase", expected: true, err: nil},
+		{value: "camelCaseÐíáçriþîçàl", expected: true, err: nil},
 	}
 
 	i := 0

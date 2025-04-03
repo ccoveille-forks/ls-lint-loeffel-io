@@ -20,6 +20,9 @@ func TestKebabCase(t *testing.T) {
 		{value: "kebab-123-test", expected: true, err: nil},
 		{value: "kebab.test", expected: false, err: nil},
 		{value: "kebab_test", expected: false, err: nil},
+
+		// edge cases currently supported: Diacritical Marks
+		{value: "ðíáçriþîçàl-kebab-case", expected: true, err: nil},
 	}
 
 	i := 0

@@ -22,6 +22,9 @@ func TestScreamingSnakeCase(t *testing.T) {
 		{value: "SNAKE.CASE.TEST", expected: false, err: nil},
 		{value: "snake-case-test", expected: false, err: nil},
 		{value: "SNAKE-CASE-TEST", expected: false, err: nil},
+
+		// edge cases currently supported: Diacritical Marks
+		{value: "ÐÍÁÇRIÞÎÇÀL_SNAKE_CASE", expected: true, err: nil},
 	}
 
 	i := 0

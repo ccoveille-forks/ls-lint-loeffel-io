@@ -21,6 +21,11 @@ func TestPascalCase(t *testing.T) {
 		{value: "pascal_case", expected: false, err: nil},
 		{value: "pascal.case", expected: false, err: nil},
 		{value: "pascal-case", expected: false, err: nil},
+
+		// edge cases currently supported: Diacritical Marks
+		{value: "PascalCaseÐíáçriþîçàl", expected: true, err: nil},
+		{value: "PascalCaseðíáçriþîçàl", expected: true, err: nil},
+		{value: "ÐíáçriþîçàlPascalCase", expected: true, err: nil},
 	}
 
 	i := 0
